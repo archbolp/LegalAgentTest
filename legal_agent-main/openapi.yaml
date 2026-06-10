@@ -1,0 +1,111 @@
+openapi: 3.1.0
+info:
+  title: Legal Diff Agent API
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+paths:
+  /health:
+    get:
+      summary: Health check
+      responses:
+        "200":
+          description: Service is up
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                required: [status]
+
+  /diff:
+    post:
+      summary: Compare two legal documents and return structured differences
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                old:
+                  type: string
+                  format: binary
+                  description: Old version PDF
+                new:
+                  type: string
+                  format: binary
+                  description: New version PDF
+              required: [old, new]
+      responses:
+        "200":
+          description: Diff report
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DiffResponse"
+        "400":
+          description: Bad request (unsupported file, empty file, etc.)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "500":
+          description: Internal error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+components:
+  schemas:
+    DiffResponse:
+      type: object
+      properties:
+        request_id:
+          type: string
+          description: Request identifier
+        report:
+          $ref: "#/components/schemas/DiffReport"
+      required: [request_id, report]
+
+    DiffReport:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/DiffItem"
+        overall_summary:
+          type: string
+      required: [items, overall_summary]
+
+    DiffItem:
+      type: object
+      properties:
+        clause_id:
+          type: ["string", "null"]
+        change_type:
+          type: string
+          enum: [added, removed, modified, unchanged]
+        old_text:
+          type: ["string", "null"]
+        new_text:
+          type: ["string", "null"]
+        summary:
+          type: string
+        risk:
+          type: string
+          enum: [low, medium, high]
+        rationale:
+          type: string
+      required: [change_type, summary, risk, rationale]
+
+    ErrorResponse:
+      type: object
+      properties:
+        detail:
+          type: string
+      required: [detail]

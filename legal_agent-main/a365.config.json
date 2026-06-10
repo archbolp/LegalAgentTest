@@ -1,0 +1,9 @@
+{
+  "tenantId": "50f2c1e0-58a0-448c-9cf5-c7ec5da446d1",
+  "clientAppId": "286ff542-14e7-41fb-a3ff-85da877c3141",
+  "agentIdentityDisplayName": "LegalDiffAgent Identity",
+  "agentBlueprintDisplayName": "LegalDiffAgent Blueprint",
+  "agentDescription": "LegalDiffAgent",
+  "aiTeammate": false,
+  "useBlueprint": true
+}

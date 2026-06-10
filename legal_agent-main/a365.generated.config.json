@@ -1,0 +1,65 @@
+{
+  "agentBlueprintId": "119bb075-fd82-49a4-88bb-9db03fceffd9",
+  "agentRegistrationId": "T_efe379b4-ca65-72f5-bf1a-4c88eb6c9583",
+  "agentBlueprintObjectId": "119bb075-fd82-49a4-88bb-9db03fceffd9",
+  "agentBlueprintServicePrincipalObjectId": "036db02a-4d4c-4c39-9a5b-5dd91592e10e",
+  "agenticAppId": "c56368e0-f315-4db2-958c-9c2efa9ec898",
+  "agentBlueprintClientSecret": "AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAL7qJZaK140+8+Cr99t5JwwAAAAACAAAAAAAQZgAAAAEAACAAAAA1mE86SPZaAKhLTOyaeLc3RyWO7kpub4i93zKZHB1SBgAAAAAOgAAAAAIAACAAAADZ1E71KywazmG1g7SLiCDIJI3LG/fgcS9enM8XmaXECDAAAACPdz3wja/l2XqsSkx2VfNvHBOVm9b5/oivsgPpj0OYbuJf35vZ8uOSKY4f1t9x7AlAAAAArwnrkj9WbCZHrBiIfRhOqkjsV0ZhSWMgsX89sfGKOZDX48BUWqPQq+9m0uDGhfHwF81AEEn52/QCyxClOWRJvQ==",
+  "agentBlueprintClientSecretProtected": true,
+  "resourceConsents": [
+    {
+      "resourceName": "Microsoft Graph",
+      "resourceAppId": "00000003-0000-0000-c000-000000000000",
+      "consentGranted": true,
+      "consentTimestamp": "2026-06-09T13:24:02.9403088Z",
+      "scopes": [
+        "Mail.ReadWrite",
+        "Mail.Send",
+        "Chat.ReadWrite",
+        "User.Read.All",
+        "Sites.Read.All",
+        "Files.ReadWrite.All",
+        "ChannelMessage.Read.All",
+        "ChannelMessage.Send"
+      ],
+      "inheritablePermissionsConfigured": true,
+      "inheritablePermissionsAlreadyExist": false
+    },
+    {
+      "resourceName": "Agent 365 Tools",
+      "resourceAppId": "ea9ffc3e-8a23-4a7d-836d-234d7c7565c1",
+      "consentGranted": true,
+      "consentTimestamp": "2026-06-09T13:24:02.9406432Z",
+      "scopes": [
+        "McpServersMetadata.Read.All"
+      ],
+      "inheritablePermissionsConfigured": true,
+      "inheritablePermissionsAlreadyExist": false
+    },
+    {
+      "resourceName": "Observability API",
+      "resourceAppId": "9b975845-388f-4429-889e-eab1ef63949c",
+      "consentGranted": true,
+      "consentTimestamp": "2026-06-09T13:24:02.9406489Z",
+      "scopes": [
+        "Agent365.Observability.OtelWrite"
+      ],
+      "inheritablePermissionsConfigured": true,
+      "inheritablePermissionsAlreadyExist": false
+    },
+    {
+      "resourceName": "Power Platform API",
+      "resourceAppId": "8578e004-a5c6-46e7-913e-12f58912df43",
+      "consentGranted": true,
+      "consentTimestamp": "2026-06-09T13:24:02.9406556Z",
+      "scopes": [
+        "Connectivity.Connections.Read"
+      ],
+      "inheritablePermissionsConfigured": true,
+      "inheritablePermissionsAlreadyExist": false
+    }
+  ],
+  "completed": false,
+  "lastUpdated": "2026-06-09T13:24:12.7788528Z",
+  "cliVersion": "1.1.199.9866"
+}
